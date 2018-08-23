@@ -24,25 +24,25 @@ class PlayerController < UIViewController
     @controls.animate.addTarget(self, action: 'animate:', forControlEvents: UIControlEventTouchUpInside)
   end
 
-  def viewDidAppear(animated)
+  def viewDidAppear(_)
     super
     @player.play
   end
 
-  def play(sender)
+  def play(_)
     @player.play
   end
 
-  def pause(sender)
+  def pause(_)
     @player.pause
   end
 
-  def reset(sender)
+  def reset(_)
     @player.seekToTime(KCMTimeZero)
     @player.play
   end
 
-  def animate(sender)
+  def animate(_)
     @scaled ||= false
     if !@scaled
       @player_layer.transform = CATransform3DConcat(
